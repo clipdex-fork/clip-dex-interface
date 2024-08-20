@@ -19,19 +19,13 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: calc(100vh - 320px);
+  min-height: calc(100vh - 233px);
   -webkit-box-align: center;
   align-items: center;
   flex: 1 1 0%;
   overflow: hidden auto;
   z-index: 1;
-
-  // background-size: cover !important;
-  // background: black;
   background: ${({ theme }) => (theme.isDark ? '#343135' : '#faf9fa')};
-  // background-image: ${({ theme }) => (theme.isDark ? `url('/images/black.png')` : `url('/images/light.png')`)};
-  // background-repeat: no-repeat;
-  // background-position: center top;
 `
 
 const StyledText = styled(Text)`
@@ -47,30 +41,9 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 30px;
-  max-width: 1188px;
   width: 90%;
   justify-content: space-between;
   margin-bottom: 24px;
-
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
-  }
-`
-const RightCol = styled.div`
-  background-color: ${({ theme }) => (theme.isDark ? '#27262c' : 'white')};
-  border-top-left-radius: 36px;
-  border-bottom-right-radius: 36px;
-  border-radius: 20px;
-  height: inherit;
-  font-size: 12px;
-  justify-content: space-between;
-  width: 33%;
-  margin-left: 12px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
-  @media screen and (max-width: 800px) {
-    margin: 12px 0;
-    width: 100%;
-  }
 `
 
 const LeftCol = styled.div`
@@ -79,7 +52,7 @@ const LeftCol = styled.div`
   padding: 20px 30px;
   height: inherit;
   font-size: 12px;
-  width: 66%;
+  width: 100%;
   margin-right: 12px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
   @media screen and (max-width: 800px) {
@@ -266,27 +239,6 @@ const Home: React.FC = () => {
                 </div>
               </LeftGridLayout>
             </LeftCol>
-            <RightCol>
-              <StyledNFTitem>
-                <StyledText1 color="white"> {t('Minted NFT')} </StyledText1>
-                <StyledCardValue1> {t('0.000')} </StyledCardValue1>
-              </StyledNFTitem>
-              <StyledBorder />
-              <StyledNFTitem>
-                <StyledText1 color="white"> {t('NFT Transactions')} </StyledText1>
-                <StyledCardValue1> {t('0.000')} </StyledCardValue1>
-              </StyledNFTitem>
-              <StyledBorder />
-              <StyledNFTitem>
-                <StyledText1 color="white"> {t('NFT Trading Val')} </StyledText1>
-                <StyledCardValue1> {t('0.000')}</StyledCardValue1>
-              </StyledNFTitem>
-              <StyledBorder />
-              <StyledNFTitem>
-                <StyledText1 color="white"> {t('CLIP Locked by NFT')} </StyledText1>
-                <StyledCardValue1> {t('0.000')} </StyledCardValue1>
-              </StyledNFTitem>
-            </RightCol>
           </Row>
           <CardContainer>
             <HomeCardList />
